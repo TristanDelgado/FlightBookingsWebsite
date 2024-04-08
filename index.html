@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JetSetGo!</title>
+    <link rel="icon" type="image/x-icon" href="images/faviconPlane.svg">
+    <script type="text/javascript" src="javascript/indexjs.js"></script>
+    <link rel="stylesheet" href="css/indexcss.css" />
+  </head>
+  <body>
+    <header>
+        <ul>
+            <li>Log In<img src="images/loginStatic.png" alt="A login icon"></li>
+            <li>View Saved<img src="images/savedIcon.png" alt="A saved icon"></li>
+        </ul>
+    </header>
+    <div class="hero">
+        <h4 class="title" id="mottoBeg">Fly further. Fly faster.</h4>
+        <h1 class="title" id="mainMotto">Jet...Set...Go!</h1>
+    </div>
+    <div>
+        <form>
+            <input type="text" id="from" name="from" placeholder="From">
+            <input type="text" id="to" name="to" placeholder="To">
+            <input type="text" id="departDate" name="departDate" placeholder="Departure Date">
+            <input type="text" id="returnDate" name="returnDate" placeholder="Return Date">
+            <select>
+                <option value="Economy">Economy</option>
+                <option value="PremiumEconomy">Premium Economy</option>
+                <option value="Business">Business</option>
+                <option value="First">First</option>
+            </select>
+            <input type="number" id="numPassengers" name="numPassengers" placeholder="1" min="0">
+        </form>
+    </div>
+  </body>
+</html>

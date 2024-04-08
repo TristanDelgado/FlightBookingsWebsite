@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+header ul {
+  list-style: none;
+  background-color: rgb(255, 255, 255); /*Darker Color rgb(2, 62, 138); */
+}
+
+header li {
+  display: inline;
+}
+
+.hero {
+  background-image: url(../images/labelphoto1.jpg);
+  max-width: 100%;
+  max-height: 100%;
+  height: 95vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  text-align: center;
+  color: coral;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+#mottoBeg {
+  padding-top: 10vh;
+  font-size: 3em;
+}
+
+#mainMotto {
+  font-size: 8em;
+}
