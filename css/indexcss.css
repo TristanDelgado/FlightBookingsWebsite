@@ -1,22 +1,153 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap');
 
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
-header ul {
-  list-style: none;
-  background-color: rgb(255, 255, 255); /*Darker Color rgb(2, 62, 138); */
+body {
+  background-color: rgb(20, 33, 61);
 }
 
-header li {
-  display: inline;
+.loginsignupforms div {
+  padding: 1em;
+}
+
+.loginsignupforms {
+  position: absolute;
+  width: 20vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(20, 33, 61);
+  border-width: 2px;
+  border-color: white;
+  border-radius: .25em;
+  border-style: solid;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 65%;
+}
+
+.loginsignupforms h2 {
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+.loginsignupforms h4 {
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+.loginsignupforms input{
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  width: 95%;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+.loginsignupforms input:hover{
+  background-color: rgb(229, 229, 229);
+
+}
+
+.loginsignupforms button{
+  width: 100%;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+  color: black;
+  font-size: 1em;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 8px 3px 8px 3px;
+}
+
+.loginsignupforms button:hover{
+  background-color: rgb(229, 229, 229);
+}
+
+#noaccountdiv { 
+  display: flex; 
+  flex-direction: row;
+} 
+
+#noaccountdiv:before, 
+#noaccountdiv:after { 
+  content: ""; 
+  flex: 1 1; 
+  border-bottom: 2px solid white; 
+  margin: auto; 
+} 
+
+#noaccountdiv:before {
+  margin-left: 8px;
+}
+
+
+#loginform {
+  display: none;
+}
+ 
+#signupform {
+  display: none;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  font-size: 1.5em;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  margin-left: .25em;
+  margin-bottom: .25em;
+  margin-top: .25em;
+}
+
+header img {
+  max-width: 1em;
+  max-height: 1em;
+  margin-bottom: -3px;
+}
+
+#login {
+  display: inline-block;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: .3em;
+  margin-right: .5em;
+  padding: 2px;
+}
+
+#viewSaved {
+  display: inline-block;
+  margin-right: .5em;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: .3em;
+  padding: 2px;
 }
 
 .hero {
   background-image: url(../images/labelphoto1.jpg);
-  max-width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  max-width: 80%;
   max-height: 100%;
   height: 95vh;
   background-repeat: no-repeat;
@@ -25,7 +156,7 @@ header li {
 
 .title {
   text-align: center;
-  color: coral;
+  color: rgb(252, 163, 17);
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   font-family: "Roboto", sans-serif;
@@ -40,4 +171,172 @@ header li {
 
 #mainMotto {
   font-size: 8em;
+}
+
+#searchform {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: rgb(229, 229, 229);
+  padding: 1em;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  margin-right: 10vw;
+  margin-left: 10vw;
+  border-width: .25em;
+  border-color:rgb(252, 163, 17);
+  border-style: solid;
+}
+
+.inputclass {
+  border-width: 4px;
+  border-color:rgb(252, 163, 17);
+  border-style: solid;
+  padding: 8px;
+  font-size: 1em;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.bottomRow {
+  margin-top: 16px;
+  border-width: 4px;
+  border-color:rgb(252, 163, 17);
+  border-style: solid;
+  padding: 8px;
+  font-size: 1em;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: white;
+  
+}
+
+.addminus {
+  margin-top: 16px;
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  border-width: 4px;
+  border-color:rgb(252, 163, 17);
+  border-style: solid;
+  display: block;
+}
+
+#minus {
+  margin-left: 5px;
+}
+
+#add {
+  margin-right: 5px;
+}
+
+#numPassengers {
+  width: 2em;
+}
+
+#submit {
+  margin-left: auto;
+}
+
+#resultsDivider {
+  border: 0;
+  font-size: 1px;
+  height: 1.5em;
+  line-height: 1em;
+  position: relative;
+  text-align: center;
+}
+
+#resultsDivider::before {
+  content: "";
+  background: linear-gradient(to right, transparent, white, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+
+#resultsDivider::after {
+  background-color: rgb(20, 33, 61);
+  color: white;
+  content: attr(data-content);
+  line-height: 1.5em;
+  padding: 0 7px;
+  position: relative;
+}
+
+#emptySearchResultsMessage {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  color: white;
+}
+
+#footerLabel {
+  margin-top: 3em;
+  border: 0;
+  font-size: 14px;
+  height: 1.5em;
+  line-height: 1em;
+  position: relative;
+  text-align: center;
+}
+
+#footerLabel::before {
+  content: "";
+  background: linear-gradient(to right, transparent, white, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+
+#footerLabel::after {
+  background-color: rgb(20, 33, 61);
+  color: white;
+  content: attr(data-content);
+  line-height: 1.5em;
+  padding: 0 7px;
+  position: relative;
+}
+
+#weblinks {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: .5em;
+}
+
+#weblinks img {
+  max-width: 2em;
+  max-height: 2em;
+}
+
+footer p {
+  color: white;
+  text-align: center;
+  margin-top: 1em;
+}
+
+footer a:link {
+  color: white;
+}
+
+footer a:visited {
+  color: white;
+}
+
+#businesslinks {
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+#businesslinks a {
+  margin-left: .5em;
+  margin-right: .5em;
 }

@@ -9,30 +9,76 @@
     <link rel="stylesheet" href="css/indexcss.css" />
   </head>
   <body>
+    <form id="loginform" class="loginsignupforms">
+      <div>
+        <h2>Sign in</h2>
+        <h4>Save flights for later retrieval</h4>
+        <input type="email" name="email" placeholder="email">
+        <input type="password" name="password" placeholder="password">
+        <button>Sign in</button>
+        <h4 id="noaccountdiv">&nbspor&nbsp</h4>
+        <button type="button" onclick="signup()">Sign up</button>
+      </div>
+    </form>
+    <form id="signupform" class="loginsignupforms">
+      <div>
+        <h2>Sign up</h2>
+        <h4>and save your flights</h4>
+        <input type="text" name="firstName" placeholder="Firstname">
+        <input type="text" name="lastName" placeholder="Lastname">
+        <input type="email" name="signUpEmail" placeholder="email">
+        <input type="pass" name="signUpPass" placeholder="password">
+        <button>Sign up</button>
+      </div>
+    </form>
     <header>
-        <ul>
-            <li>Log In<img src="images/loginStatic.png" alt="A login icon"></li>
-            <li>View Saved<img src="images/savedIcon.png" alt="A saved icon"></li>
-        </ul>
+      <div id="login" onclick="login()">
+        <h3>Log In<img src="images/loginicon.png" alt="A login icon"></h3>
+      </div>
+      <div id="viewSaved">
+        <h3>View Saved<img src="images/saveicon.png" alt="A saved icon"></h3>
+      </div>
     </header>
     <div class="hero">
         <h4 class="title" id="mottoBeg">Fly further. Fly faster.</h4>
         <h1 class="title" id="mainMotto">Jet...Set...Go!</h1>
     </div>
     <div>
-        <form>
-            <input type="text" id="from" name="from" placeholder="From">
-            <input type="text" id="to" name="to" placeholder="To">
-            <input type="text" id="departDate" name="departDate" placeholder="Departure Date">
-            <input type="text" id="returnDate" name="returnDate" placeholder="Return Date">
-            <select>
+        <form id="searchform">
+            <input class="inputclass" type="text" id="from" name="from" placeholder="From?">
+            <input class="inputclass" type="text" id="to" name="to" placeholder="To?">
+            <input class="inputclass" type="text" id="departDate" name="departDate" placeholder="Departure Date?">
+            <input class="inputclass" type="text" id="returnDate" name="returnDate" placeholder="Return Date?"><br>
+            <select class="bottomRow">
                 <option value="Economy">Economy</option>
                 <option value="PremiumEconomy">Premium Economy</option>
                 <option value="Business">Business</option>
                 <option value="First">First</option>
             </select>
-            <input type="number" id="numPassengers" name="numPassengers" placeholder="1" min="0">
+            <img id="minus" class="addminus" src="images/minusSign.png" alt="minus Sign" onclick="minusPassenger()">
+            <input class="bottomRow" id="numPassengers" type="number" id="numPassengers" name="numPassengers" value="1" readonly>
+            <img id="add" class="addminus" src="images/plusSign.png" alt="Plus Sign" onclick="plusPassenger()">
+            <input class="bottomRow" type="button" id="triptype" name="triptype" value="Round Trip">
+            <input class="bottomRow" id="submit" type="submit" name="submit" value="Search">
         </form>
     </div>
+      <hr id="resultsDivider">
+      <h1 id="emptySearchResultsMessage">Wow! Such empty</h1>
   </body>
+  <footer>
+    <hr id="footerLabel" data-content="Jet...Set...Go">
+    <div id="weblinks">
+      <img src="images/footerimages/whiteinstagram.png" alt="instagram link">
+      <img src="images/footerimages/whiteyoutube.png" alt="youtube link">
+      <img src="images/footerimages/whitelinkedin.png" alt="linked in link">
+      <img src="images/footerimages/whitegithub.png" alt="github link">
+    </div>
+    <p>A website by <a href="https://www.instagram.com/tristandelgado04/" target="_blank">Tristan Delgado</a></p>
+    <div id="businesslinks">
+      <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Privacy</a>
+      <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Terms and Conditions</a>
+      <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Ad Choices</a>
+      <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Help/FAQ</a>
+    </div>
+  </footer>
 </html>
