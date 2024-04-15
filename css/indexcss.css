@@ -102,6 +102,7 @@ body {
  
 #signupform {
   display: none;
+  height: 90vh;
 }
 
 header {
@@ -273,70 +274,4 @@ header img {
   margin-top: 2em;
   margin-bottom: 2em;
   color: white;
-}
-
-#footerLabel {
-  margin-top: 3em;
-  border: 0;
-  font-size: 14px;
-  height: 1.5em;
-  line-height: 1em;
-  position: relative;
-  text-align: center;
-}
-
-#footerLabel::before {
-  content: "";
-  background: linear-gradient(to right, transparent, white, transparent);
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  height: 1px;
-}
-
-#footerLabel::after {
-  background-color: rgb(20, 33, 61);
-  color: white;
-  content: attr(data-content);
-  line-height: 1.5em;
-  padding: 0 7px;
-  position: relative;
-}
-
-#weblinks {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin-top: .5em;
-}
-
-#weblinks img {
-  max-width: 2em;
-  max-height: 2em;
-}
-
-footer p {
-  color: white;
-  text-align: center;
-  margin-top: 1em;
-}
-
-footer a:link {
-  color: white;
-}
-
-footer a:visited {
-  color: white;
-}
-
-#businesslinks {
-  text-align: center;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-#businesslinks a {
-  margin-left: .5em;
-  margin-right: .5em;
 }
