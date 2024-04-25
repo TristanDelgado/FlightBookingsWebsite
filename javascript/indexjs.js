@@ -17,31 +17,44 @@ function plusPassenger()
     doc.innerHTML = doc.value;
 }
 
-function login()
+var button;
+var buttonValue;
+function changeTripType()
 {
-    var doc = document.getElementById("loginform");
-    doc.style.display = "block";
+    if(button == null)
+    {
+        button = document.getElementById("tripWay");
+        buttonValue = document.getElementById("tripWayValue");
+    }
+    if(button.value == "Round Trip")
+    {
+        buttonValue.value = "One Way";
+        button.innerHTML = "One Way";
+    }
+    else 
+    {
+        buttonValue.value = "Round Trip";
+        button.innerHTML = "Round Trip";
+    }
 }
 
-function signup()
+
+
+function removeWow()
 {
-    var doc = document.getElementById("loginform");
-    doc.style.display = "none";
-    var doc2 = document.getElementById("signupform");
-    doc2.style.display = "block";
+    var tag = document.getElementById("emptySearchResultsMessage");
+    tag.remove();
 }
+
 var autocomplete;
+var autocomplete2;
 function activatePlacesAutoComplete()
 {
     var options = {types: ['airport'], fields: ['name']};
     var input = document.getElementById("from");
     autocomplete = new google.maps.places.Autocomplete(input, options);
+
+    var input2 = document.getElementById("to");
+    autocomplete2 = new google.maps.places.Autocomplete(input2, options);
 }
 
-var autocomplete2;
-function activatePlacesAutoComplete2()
-{
-    var options = {types: ['airport'], fields: ['name']};
-    var input = document.getElementById("to");
-    autocomplete = new google.maps.places.Autocomplete(input, options);
-}

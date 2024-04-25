@@ -1,0 +1,48 @@
+
+
+.startOfGrid {
+    width: 80vw;
+    margin: 2em auto 2em auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background: rgb(229, 229, 229);
+    border-radius: 2em;
+    padding: 1em;
+    row-gap: 1em;
+}
+
+.travelInfo {
+    grid-row: 2 / 4;
+}
+
+.subgrid 
+{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.subgrid div {
+    margin-top: .5em;
+}
+
+.subgrid img {
+    width: 5em;
+    height: 4em;
+}
+
+.thirdColumn {
+    width: 7em;
+}
+
+.flightOptionsSaveButtons {
+    width: 6em;
+    border-radius: 2em;
+    padding: 8px;
+    font-size: 1em;
+    background-color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    grid-column: 3;
+    grid-row: 3;
+}

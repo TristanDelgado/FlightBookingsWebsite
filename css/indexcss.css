@@ -9,102 +9,6 @@ body {
   background-color: rgb(20, 33, 61);
 }
 
-.loginsignupforms div {
-  padding: 1em;
-}
-
-.loginsignupforms {
-  position: absolute;
-  width: 20vw;
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(20, 33, 61);
-  border-width: 2px;
-  border-color: white;
-  border-radius: .25em;
-  border-style: solid;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30%;
-  height: 65%;
-}
-
-.loginsignupforms h2 {
-  font-family: "Roboto", sans-serif;
-  color: white;
-}
-
-.loginsignupforms h4 {
-  font-family: "Roboto", sans-serif;
-  color: white;
-}
-
-.loginsignupforms input{
-  font-family: "Roboto", sans-serif;
-  font-size: 1em;
-  width: 95%;
-  border-color: black;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 10px;
-  padding: 8px;
-  margin-top: .5em;
-  margin-bottom: .5em;
-}
-
-.loginsignupforms input:hover{
-  background-color: rgb(229, 229, 229);
-
-}
-
-.loginsignupforms button{
-  width: 100%;
-  margin-top: .5em;
-  margin-bottom: .5em;
-  background-color: white;
-  font-family: "Roboto", sans-serif;
-  color: black;
-  font-size: 1em;
-  border-color: black;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 10px;
-  padding: 8px 3px 8px 3px;
-}
-
-.loginsignupforms button:hover{
-  background-color: rgb(229, 229, 229);
-}
-
-#noaccountdiv { 
-  display: flex; 
-  flex-direction: row;
-} 
-
-#noaccountdiv:before, 
-#noaccountdiv:after { 
-  content: ""; 
-  flex: 1 1; 
-  border-bottom: 2px solid white; 
-  margin: auto; 
-} 
-
-#noaccountdiv:before {
-  margin-left: 8px;
-}
-
-
-#loginform {
-  display: none;
-}
- 
-#signupform {
-  display: none;
-  height: 90vh;
-}
-
 header {
   display: flex;
   flex-direction: row;
@@ -144,6 +48,17 @@ header img {
   padding: 2px;
 }
 
+#logout {
+  display: inline-block;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: .3em;
+  margin-right: .5em;
+  padding: 2px;
+  margin-left: auto;
+}
+
 .hero {
   background-image: url(../images/labelphoto1.jpg);
   margin: auto;
@@ -176,6 +91,7 @@ header img {
 
 #searchform {
   display: flex;
+  row-gap: 8px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -185,43 +101,36 @@ header img {
   margin-bottom: 5vh;
   margin-right: 10vw;
   margin-left: 10vw;
-  border-width: .25em;
-  border-color:rgb(252, 163, 17);
-  border-style: solid;
+  border-radius: 1em;
+  border-width: 0;
 }
 
 .inputclass {
-  border-width: 4px;
-  border-color:rgb(252, 163, 17);
-  border-style: solid;
+  border-radius: 2em;
   padding: 8px;
   font-size: 1em;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin: 0 2px 0 2px;
+  background-color: white;
+  vertical-align: bottom;
+  border-radius: 2em;
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
 }
 
-.bottomRow {
-  margin-top: 16px;
-  border-width: 4px;
-  border-color:rgb(252, 163, 17);
-  border-style: solid;
-  padding: 8px;
-  font-size: 1em;
-  margin-left: 0px;
-  margin-right: 0px;
-  background-color: white;
-  
+#passengersdiv {
+  display: inline-block;
 }
 
 .addminus {
-  margin-top: 16px;
   width: 35px;
   height: 35px;
   background-color: white;
-  border-width: 4px;
-  border-color:rgb(252, 163, 17);
+  border-radius: 2em;
   border-style: solid;
-  display: block;
+  border-width: 3px;
+  border-color: black;
+  vertical-align: bottom;
 }
 
 #minus {
@@ -238,6 +147,14 @@ header img {
 
 #submit {
   margin-left: auto;
+}
+
+.formExitButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 10%;
+  height: auto;
 }
 
 #resultsDivider {
