@@ -7,6 +7,12 @@
     <link rel="icon" type="image/x-icon" href="images/faviconPlane.svg">
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzMjhFzxSPek63pRk6BA5mqSEtI4V4EGw&loading=async&libraries=places&callback=activatePlacesAutoComplete"></script>
     <script type="text/javascript" src="javascript/indexjs.js"></script>
+    <script>
+      function changePage(URL)
+      {
+        window.location.href = URL;
+      }
+    </script>
     <link rel="stylesheet" href="css/indexcss.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/PossibleFlights.css" />
@@ -73,50 +79,6 @@
       echo '<h1 id="emptySearchResultsMessage">Wow! Such empty</h1>';
       }
       $numberOfFlightsToGet = 8;
-      if(isset($_SESSION['flightData']))
-      {
-        $flightData = $_SESSION['flightData'];
-            $currentlyDisplayed = 0;
-            while($currentlyDisplayed < $numberOfFlightsToGet)
-            {
-              echo '<div class="startOfGrid">';
-                  echo '<h2>Carrier: '.$flightData[$currentlyDisplayed]['name'].'</h2>';
-                                echo '<h2>Price: $'.$flightData[$currentlyDisplayed]['price'].'</h2>';
-                                echo '<div class="travelInfo">';
-                                      echo '<h3>Leave On: '.$flightData[$currentlyDisplayed]['departureDate'].'</h3>';
-                                      echo '<h3>Travel Time: '.$flightData[$currentlyDisplayed]['flightTimeDeparting'].'</h3>';
-                                    echo '<div class="subgrid">';
-                                      echo '<div>';
-                                        echo '<h3>'.$flightData[$currentlyDisplayed]['departingAirport'].'</h3>';
-                                          echo '<h3>'.$flightData[$currentlyDisplayed]['departureTime'].'</h3>';
-                                    echo '</div>';
-                                    echo '<img src="images/rightArrow.png">';
-                                    echo '<div>';
-                                          echo '<h3>'.$flightData[$currentlyDisplayed]['arrivingAirport'].'</h3>';
-                                          echo '<h3>'.$flightData[$currentlyDisplayed]['arrivalTime'].'</h3>';
-                                      echo '</div>';
-                                  echo '</div>';
-                                  echo '</div>';
-                                  echo '<div class="travelInfo">';
-                                    echo '<h3>Return On: '.$flightData[$currentlyDisplayed]['returnDate'].'</h3>';
-                                    echo '<h3>Travel Time: '.$flightData[$currentlyDisplayed]['flightTimeReturning'].'</h3>';
-                                    echo '<div class="subgrid">';
-                                      echo '<div>';
-                                        echo '<h3>'.$flightData[$currentlyDisplayed]['arrivingAirport'].'</h3>';
-                                          echo '<h3>'.$flightData[$currentlyDisplayed]['returnDepartureTime'].'</h3>';
-                                      echo '</div>';
-                                    echo '<img src="images/rightArrow.png">';
-                                      echo '<div>';
-                                          echo '<h3>'.$flightData[$currentlyDisplayed]['departingAirport'].'</h3>';
-                                          echo '<h3>'.$flightData[$currentlyDisplayed]['returnArrivalTime'].'</h3>';
-                                      echo '</div>';
-                                    echo '</div>';
-                                  echo '</div>';
-                                  echo '<button class="flightOptionsSaveButtons" onAction>Save</button>';
-                echo '</div>';
-                $currentlyDisplayed += 1;
-            }
-      }
         if(isset($_POST["submit"]))
         {
             echo '<script type="text/javascript">removeWow();</script>';
@@ -260,7 +222,8 @@
                   'returnDate' => $returnDate,
                   'flightTimeDeparting' => subStr($result_data[0]['itineraries'][0]['segments'][0]['duration'], 2, 5),
                   'flightTimeReturning' => subStr($result_data[0]['itineraries'][1]['segments'][0]['duration'], 2, 5),
-                  'idNum' => $count
+                  'idNum' => $count,
+                  'beenSelected' => false
                 );
                 $flightData[$count] = $individualFlightData;
                 $count = $count + 1;
@@ -272,7 +235,60 @@
             {
               echo '<div class="startOfGrid">';
                   echo '<h2>Carrier: '.$flightData[$currentlyDisplayed]['name'].'</h2>';
+                  echo '<h2>Price: $'.$flightData[$currentlyDisplayed]['price'].'</h2>';
+                  if($flightData[$currentlyDisplayed]['beenSelected'] == true)
+                  {
+                    echo '<h2 class="selected">Selected</h2>';
+                  }
+                    echo '<div class="travelInfo">';
+                      echo '<h3>Leave On: '.$flightData[$currentlyDisplayed]['departureDate'].'</h3>';
+                      echo '<h3>Travel Time: '.$flightData[$currentlyDisplayed]['flightTimeDeparting'].'</h3>';
+                        echo '<div class="subgrid">';
+                          echo '<div>';
+                            echo '<h3>'.$flightData[$currentlyDisplayed]['departingAirport'].'</h3>';
+                            echo '<h3>'.$flightData[$currentlyDisplayed]['departureTime'].'</h3>';
+                              echo '</div>';
+                                echo '<img src="images/rightArrow.png">';
+                                  echo '<div>';
+                                    echo '<h3>'.$flightData[$currentlyDisplayed]['arrivingAirport'].'</h3>';
+                                    echo '<h3>'.$flightData[$currentlyDisplayed]['arrivalTime'].'</h3>';
+                          echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                        echo '<div class="travelInfo">';
+                                    echo '<h3>Return On: '.$flightData[$currentlyDisplayed]['returnDate'].'</h3>';
+                                    echo '<h3>Travel Time: '.$flightData[$currentlyDisplayed]['flightTimeReturning'].'</h3>';
+                                    echo '<div class="subgrid">';
+                                      echo '<div>';
+                                        echo '<h3>'.$flightData[$currentlyDisplayed]['arrivingAirport'].'</h3>';
+                                          echo '<h3>'.$flightData[$currentlyDisplayed]['returnDepartureTime'].'</h3>';
+                                      echo '</div>';
+                                    echo '<img src="images/rightArrow.png">';
+                                      echo '<div>';
+                                          echo '<h3>'.$flightData[$currentlyDisplayed]['departingAirport'].'</h3>';
+                                          echo '<h3>'.$flightData[$currentlyDisplayed]['returnArrivalTime'].'</h3>';
+                                      echo '</div>';
+                                    echo '</div>';
+                                  echo '</div>';
+                                  echo '<button class="flightOptionsSaveButtons" onclick=changePage("php\/storeFlight.php?idNum='.$currentlyDisplayed.'")>Save</button>';
+                echo '</div>';
+                $currentlyDisplayed += 1;
+            }
+        }
+        else{
+          if(isset($_SESSION['flightData']))
+          {
+            $flightData = $_SESSION['flightData'];
+                $currentlyDisplayed = 0;
+                while($currentlyDisplayed < $numberOfFlightsToGet)
+                {
+              echo '<div class="startOfGrid">';
+                  echo '<h2>Carrier: '.$flightData[$currentlyDisplayed]['name'].'</h2>';
                                 echo '<h2>Price: $'.$flightData[$currentlyDisplayed]['price'].'</h2>';
+                                if($flightData[$currentlyDisplayed]['beenSelected'] == true)
+                                {
+                                  echo '<h2 class="selected">Selected</h2>';
+                                }
                                 echo '<div class="travelInfo">';
                                       echo '<h3>Leave On: '.$flightData[$currentlyDisplayed]['departureDate'].'</h3>';
                                       echo '<h3>Travel Time: '.$flightData[$currentlyDisplayed]['flightTimeDeparting'].'</h3>';
@@ -303,12 +319,12 @@
                                       echo '</div>';
                                     echo '</div>';
                                   echo '</div>';
-                                  echo '<button class="flightOptionsSaveButtons" method="get" action="storeFlight.php?idNum='.$flightData[$currentlyDisplayed]["idNum"].'">Save</button>';
-                echo '</div>';
-                $currentlyDisplayed += 1;
-            }
+                                  echo '<button class="flightOptionsSaveButtons" onclick=changePage("php\/storeFlight.php?idNum='.$currentlyDisplayed.'")>Save</button>';
+                                echo '</div>';
+                    $currentlyDisplayed += 1;
+                }
+          }
         }
-        
       ?>
   </body>
   <footer>

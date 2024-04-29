@@ -46,3 +46,9 @@
     grid-column: 3;
     grid-row: 3;
 }
+
+.selected {
+  grid-column: 3;
+  grid-row: 1;
+
+}
