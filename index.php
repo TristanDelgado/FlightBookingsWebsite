@@ -35,7 +35,7 @@
       <?php
         if(isset($_SESSION['username']))
         {
-          echo '<div id="viewSaved">';
+          echo '<div id="viewSaved" onclick=document.location.href="php/savedFlights.php">';
           echo '<h3>View Saved<img src="images/saveicon.png" alt="A saved icon"></h3>';
           echo '</div>';
           echo '<div id="logout">';
