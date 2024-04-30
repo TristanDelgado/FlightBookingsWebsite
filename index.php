@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JetSetGo!</title>
     <link rel="icon" type="image/x-icon" href="images/faviconPlane.svg">
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzMjhFzxSPek63pRk6BA5mqSEtI4V4EGw&loading=async&libraries=places&callback=activatePlacesAutoComplete"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=REMOVED&loading=async&libraries=places&callback=activatePlacesAutoComplete"></script>
     <script type="text/javascript" src="javascript/indexjs.js"></script>
     <script>
       function changePage(URL)
@@ -103,7 +103,7 @@
             $data = array(
             'grant_type' => "client_credentials",
             'client_id' => "afNMRc6cemzwHmVCseP8cC1vgGIc2wxF",
-            'client_secret' => "6EeAX2WPqfHoT2IZ"
+            'client_secret' => "REMOVED"
             );
 
             $ch = curl_init(); //This request is for getting the access token
