@@ -9,7 +9,6 @@ Produce a full-fledged website with real-time airline flight information and sea
 - Save flights for later retrieval
 
 ## Tech Stack
-- Python
 - HTML
 - CSS
 - JavaScript
@@ -22,7 +21,7 @@ Produce a full-fledged website with real-time airline flight information and sea
 - Google Maps API
 
 ## Notes
-Produced for the web development class, CS-4443-TSAA, at Troy University in the Spring of 2024.
+Created for CS-4443-TSAA: Web Development, Troy University, Spring 2024.
 
 ## Video Demo
 Click [HERE](https://youtu.be/S8lbMAEBwTU) to view the final demo of the working website.
